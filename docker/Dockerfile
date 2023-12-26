@@ -51,7 +51,8 @@ RUN apt-get update && apt-get install -y \
     xorg-dev \
     freeglut3-dev \
     libglu1-mesa-dev \
-    x11-apps
+    x11-apps \
+    ffmpeg
 
 # install python packages ----------------
 COPY requirements.txt /root/
