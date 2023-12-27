@@ -9,4 +9,4 @@ fi
 
 export WANDB_API_KEY=`cat wandb_key.txt`
 
-docker-compose up ${TAG_NAME} &
+docker-compose -p octo up ${TAG_NAME} &

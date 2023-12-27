@@ -6,4 +6,4 @@ else
   TAG_NAME="latest"
 fi
 
-docker-compose build ${TAG_NAME}
+docker-compose -p octo build ${TAG_NAME}
