@@ -15,6 +15,7 @@ services:
     shm_size: '50gb'
     volumes:
       - ${PWD}/../:/root/workspace
+      - ${DATASETS_PATH}:/root/datasets
       - /tmp/.x11-unix:/tmp/.x11-unix
     environment:
       - DISPLAY=${DISPLAY}
