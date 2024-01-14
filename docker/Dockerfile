@@ -65,6 +65,11 @@ RUN source /root/.zshrc && \
 RUN source /root/.zshrc && \
     pip install --upgrade "jax[cuda11_pip]==0.4.20" -f https://storage.googleapis.com/jax-releases/jax_cuda_releases.html
 
+# gsutil ----------------
+RUN echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] http://packages.cloud.google.com/apt cloud-sdk main" | tee -a /etc/apt/sources.list.d/google-cloud-sdk.list && \
+    curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | gpg --dearmor -o /usr/share/keyrings/cloud.google.gpg && \
+    apt-get update -y && apt-get install google-cloud-sdk -y
+
 ENV LC_ALL=C.UTF-8
 ENV LANG=C.UTF-8
 

@@ -1,0 +1,3 @@
+[submodule "rlds_dataset_mod"]
+	path = rlds_dataset_mod
+	url = git@github.com:TMats/rlds_dataset_mod.git
