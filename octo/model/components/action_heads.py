@@ -209,9 +209,9 @@ class ContinuousActionHead(nn.Module, ActionHead):
 
     def loss(
         self,
-        transformer_outputs: Dict[str, TokenGroup],
-        actions: ArrayLike,
-        pad_mask: ArrayLike,
+        transformer_outputs,
+        actions,
+        pad_mask,
         train: bool = True,
     ) -> Tuple[Array, Dict[str, Array]]:
         """Computes the loss for the action regression objective.
@@ -227,7 +227,8 @@ class ContinuousActionHead(nn.Module, ActionHead):
             metrics: dict
         """
         # (batch, window_size, pred_horizon, action_dim)
-        mean = self(transformer_outputs, train=train)
+        # mean = self(transformer_outputs, train=train)
+        mean = transformer_outputs
 
         window_size = mean.shape[1]
         _check_action_window_size(actions, window_size, self.pred_horizon)
